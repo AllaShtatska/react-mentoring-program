@@ -1,0 +1,6 @@
+.filter-button-selected{
+    background-color: brown;
+}
+.filter-button-deselected{
+    background-color: grey;
+}

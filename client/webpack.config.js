@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = function (env, options) {
   const isProduction = options.mode === "production";
@@ -14,7 +15,7 @@ module.exports = function (env, options) {
     entry: "./index",
 
     resolve: {
-      extensions: [".js", ".jsx"]
+      extensions: [".js", ".jsx", ".css"]
     },
 
     module: {
@@ -23,6 +24,20 @@ module.exports = function (env, options) {
           test: /\.jsx?$/,
           loader: "babel-loader",
           exclude: /node_modules/
+        },
+        {
+          test: /\.css$/,
+           use: ["style-loader", "css-loader"]
+           /*use: ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: "css-loader"})*/
+        },
+        {
+          test: /\.(ttf|eot|svg|woff|png)$/,
+          loader: "file-loader",
+          options: {
+            name: "[path][name].[ext]?[hash]"
+          }
         }
       ]
     },
@@ -31,7 +46,8 @@ module.exports = function (env, options) {
       new HtmlWebpackPlugin({
         hash: true,
         template: "./index.html"
-      })
+      }),
+      new ExtractTextPlugin("static/[name].css")
     ]
   };
 
