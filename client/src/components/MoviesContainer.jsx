@@ -126,5 +126,3 @@ class MoviesContainer extends React.Component {
 }
 
 export default MoviesContainer;
-
-//ReactDOM.render(<MoviesContainer />, document.getElementById('root'));

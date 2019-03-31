@@ -1,5 +1,5 @@
-import '../../../static/inline';
-import '../../../static/filter-button';
+import '../../static/inline';
+import '../../static/filter-button';
 
 import React from 'react';
 import searchFilterType from './searchFilterType'

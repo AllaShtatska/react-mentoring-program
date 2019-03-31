@@ -1,5 +1,4 @@
-import '../../../static/inline';
-
+import '../../static/inline';
 import React from 'react';
 
 const MovieTitle=({movie}) => (

@@ -1,10 +1,10 @@
-import Kill_Bill_Volume_1 from '../../images/Kill_Bill_Volume_1.png';
-import Kill_Bill_Volume_2 from '../../images/Kill_Bill_Volume_2.png';
-import Pulp_Fiction from '../../images/Pulp_Fiction.png';
-import Jackie_Brown from '../../images/Jackie_Brown.png'
-import Reservoir_Dogs from '../../images/Reservoir_Dogs.png'
-import Four_Rooms from '../../images/Four_Rooms.png'
-import Django_Unchained from '../../images/Django_Unchained.png'
+import Kill_Bill_Volume_1 from '../images/Kill_Bill_Volume_1.png';
+import Kill_Bill_Volume_2 from '../images/Kill_Bill_Volume_2.png';
+import Pulp_Fiction from '../images/Pulp_Fiction.png';
+import Jackie_Brown from '../images/Jackie_Brown.png'
+import Reservoir_Dogs from '../images/Reservoir_Dogs.png'
+import Four_Rooms from '../images/Four_Rooms.png'
+import Django_Unchained from '../images/Django_Unchained.png'
 
 var movies = {
     data:[

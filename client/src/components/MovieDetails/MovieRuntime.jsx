@@ -1,5 +1,5 @@
-import '../../../static/inline';
-import '../../../static/margin-left';
+import '../../static/inline';
+import '../../static/margin-left';
 import React from 'react';
 
 const MovieRuntime=({movie}) => (

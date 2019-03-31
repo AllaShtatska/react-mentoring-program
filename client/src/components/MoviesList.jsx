@@ -6,5 +6,3 @@ const MoviesList=({list, onSelectMovie}) => (
 );
 
 export default MoviesList;
-
-//ReactDOM.render(<MoviesList list={movies.data}/>, document.getElementById('root'));

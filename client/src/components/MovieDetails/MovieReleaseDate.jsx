@@ -1,4 +1,4 @@
-import '../../../static/inline';
+import '../../static/inline';
 
 import React from 'react';
 
