@@ -1,0 +1,39 @@
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+module.exports = function (env, options) {
+  const isProduction = options.mode === "production";
+
+  const config = {
+    context: path.resolve(__dirname, "src"),
+
+    mode: isProduction ? "production" : "development",
+
+    devtool: isProduction ? "none" : "source-map",
+
+    entry: "./index",
+
+    resolve: {
+      extensions: [".js", ".jsx"]
+    },
+
+    module: {
+      rules: [
+        {
+          test: /\.jsx?$/,
+          loader: "babel-loader",
+          exclude: /node_modules/
+        }
+      ]
+    },
+
+    plugins: [
+      new HtmlWebpackPlugin({
+        hash: true,
+        template: "./index.html"
+      })
+    ]
+  };
+
+  return config;
+};
