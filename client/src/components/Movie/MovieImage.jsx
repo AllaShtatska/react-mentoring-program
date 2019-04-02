@@ -1,4 +1,4 @@
-import '../../static/image';
+import '../../static/image.css';
 
 import React from 'react';
 

@@ -1,4 +1,4 @@
-import '../../static/movie';
+import '../../static/movie.css';
 
 import React from 'react';
 import MovieImage from './MovieImage';

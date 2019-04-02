@@ -41,15 +41,7 @@ class MoviesContainer extends React.Component {
     }
 
     sortByReleaseDate(first, second) {
-        if (new Date(first.release_date) > new Date(second.release_date)) {
-            return -1;
-        }
-
-        if (new Date(first.release_date) < new Date(second.release_date)) {
-            return 1;
-        }
-
-        return 0;
+        return new Date(first.release_date) - new Date(second.release_date);
     }
 
     sortByRating(first, second) {
@@ -59,10 +51,10 @@ class MoviesContainer extends React.Component {
     sort(inMovies, sortBy) {
         switch (sortBy) {
             case sortType.rating:
-                return inMovies.sort(this.sortByRating);
+                return [...inMovies].sort(this.sortByRating);
             case sortType.releaseDate:
             default:
-                return inMovies.sort(this.sortByReleaseDate);
+                return [...inMovies].sort(this.sortByReleaseDate);
         }
     }
 
@@ -102,6 +94,12 @@ class MoviesContainer extends React.Component {
     }
 
     render() {
+        if (this.state.hasError){
+            return (
+                <div>There is some error</div>
+            );
+        }
+
         if (this.state.selectedMovie === null)
         {
             return (

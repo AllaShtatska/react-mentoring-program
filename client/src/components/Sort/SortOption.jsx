@@ -1,5 +1,5 @@
-import '../../static/inline';
-import '../../static/sort-button';
+import '../../static/inline.css';
+import '../../static/sort-button.css';
 
 import React from 'react';
 import sortType from './sortType'

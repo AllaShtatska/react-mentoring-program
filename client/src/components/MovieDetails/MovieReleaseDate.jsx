@@ -1,4 +1,4 @@
-import '../../static/inline';
+import '../../static/inline.css';
 
 import React from 'react';
 

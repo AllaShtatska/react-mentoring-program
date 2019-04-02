@@ -15,7 +15,7 @@ module.exports = function (env, options) {
     entry: "./index",
 
     resolve: {
-      extensions: [".js", ".jsx", ".css"]
+      extensions: [".js", ".jsx"]
     },
 
     module: {

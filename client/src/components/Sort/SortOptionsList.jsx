@@ -1,5 +1,5 @@
-import '../../static/inline';
-import '../../static/margin-left';
+import '../../static/inline.css';
+import '../../static/margin-left.css';
 
 import React from 'react';
 import SortOption from './SortOption';
