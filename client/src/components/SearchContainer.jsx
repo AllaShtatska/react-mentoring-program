@@ -1,9 +1,11 @@
 import React from 'react';
 import SearchFilterList from './SearchFilter/SearchFilterList';
 
+const ENTER_KEY_CODE = 13;
+
 class SearchContainer extends React.Component{
     handleKeyDown(event){
-        if (event.keyCode===13){
+        if (event.keyCode===ENTER_KEY_CODE){
             this.props.onSearch(this.input.value);
         }
     }
@@ -27,6 +29,3 @@ class SearchContainer extends React.Component{
 }
 
 export default SearchContainer;
-
-//ReactDOM.render(<SearchContainer />, document.getElementById('root'));
-//<input type="text" onKeyDown={()=>this.props.onSearch("kill")} ref={(input)=>this.input=input}/>

@@ -5,12 +5,10 @@ import React from 'react';
 import sortType from './sortType'
 
 class SortOption extends React.Component {
-    isSortOptionSelected() {
-        return this.props.currentSortType === this.props.sortType;
-    }
-
-    getClassName() {
-        return this.isSortOptionSelected() ? 'sort-button-selected' : 'sort-button-deselected';
+    get className() {
+        const isSortOptionSelected = this.props.currentSortType === this.props.sortType;
+        
+        return isSortOptionSelected ? 'sort-button-selected' : 'sort-button-deselected';
     }
 
     getSortOptionTitle() {
@@ -24,7 +22,7 @@ class SortOption extends React.Component {
     render() {
         return (
             <div className="inline">
-                <button className={this.getClassName()} onClick={() => this.props.onSwitchSortType(this.props.sortType)}>{this.getSortOptionTitle()}</button>
+                <button className={this.className} onClick={() => this.props.onSwitchSortType(this.props.sortType)}>{this.getSortOptionTitle()}</button>
             </div>
         );
     }
