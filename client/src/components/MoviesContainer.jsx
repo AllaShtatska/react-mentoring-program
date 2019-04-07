@@ -2,8 +2,8 @@ import React from 'react';
 import MoviesResults from './MoviesResults'
 import movies from './movies'
 import SearchContainer from './SearchContainer';
-import searchFilterType from './SearchFilter/searchFilterType';
-import sortType from './Sort/sortType'
+import SEARCH_FILTER_TYPE from './SearchFilter/searchFilterType';
+import SORT_TYPE from './Sort/sortType'
 import BackToSearch from './BackToSearch'
 import MoviePage from './MoviePage'
 
@@ -12,8 +12,8 @@ class MoviesContainer extends React.Component {
         super();
         this.state = {
             list: [],
-            filter: searchFilterType.title,
-            sortType: sortType.releaseDate,
+            filter: SEARCH_FILTER_TYPE.title,
+            sortType: SORT_TYPE.releaseDate,
             selectedMovie:null,
             moviesOfTheSameGenre:[],
             hasError:false
@@ -41,7 +41,7 @@ class MoviesContainer extends React.Component {
     }
 
     sortByReleaseDate(first, second) {
-        return new Date(first.release_date) - new Date(second.release_date);
+        return new Date(second.release_date) - new Date(first.release_date);
     }
 
     sortByRating(first, second) {
@@ -50,9 +50,9 @@ class MoviesContainer extends React.Component {
 
     sort(inMovies, sortBy) {
         switch (sortBy) {
-            case sortType.rating:
+            case SORT_TYPE.rating:
                 return [...inMovies].sort(this.sortByRating);
-            case sortType.releaseDate:
+            case SORT_TYPE.releaseDate:
             default:
                 return [...inMovies].sort(this.sortByReleaseDate);
         }
@@ -70,7 +70,7 @@ class MoviesContainer extends React.Component {
 
     onSearch(filterValue) {
         var filteredMovies = movies.data;
-        if (this.state.filter === searchFilterType.title) {
+        if (this.state.filter === SEARCH_FILTER_TYPE.title) {
             filteredMovies = movies.data.filter((movie) => movie.title.toLowerCase().includes(filterValue.toLowerCase()));
         }
         else if (filterValue.trim() !== ""){

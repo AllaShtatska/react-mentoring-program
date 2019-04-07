@@ -7,11 +7,12 @@
     "build:dev": "webpack --mode development",
     "run:prod": "webpack-dev-server --mode production",
     "run:dev": "webpack-dev-server --mode development",
-    "test": "jest --verbose",
-    "test:coverage": "jest --verbose --coverage"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "jest": "^24.5.0",
+    "keymirror": "^0.1.1",
+    "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-redux": "^6.0.1",
@@ -19,16 +20,43 @@
     "redux": "^4.0.1"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-react": "^6.24.1",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
+    "cypress": "^3.2.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.7.1",
+    "react-test-renderer": "^16.8.6",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
+  },
+  "jest": {
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "<rootDir>src/tests.setup.js"
+    ],
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/dist/**",
+      "!**/coverage/**",
+      "!**/cypress/**"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/client/webpack.config.js",
+      "/client/src/components/movies.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/tests/__mocks__/fileMock.js",
+      "\\.(css|scss|sass|less)$": "<rootDir>/src/tests/__mocks__/styleMock.js"
+    }
   }
 }

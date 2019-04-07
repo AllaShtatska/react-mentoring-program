@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly if option title is selected 1`] = `
+<div
+  className="inline"
+>
+  <button
+    className="filter-button-selected"
+    onClick={[Function]}
+  >
+    Title
+  </button>
+</div>
+`;
+
+exports[`renders correctly if title is selected as a filter 1`] = `
+<div
+  className="inline"
+>
+  <button
+    className="filter-button-selected"
+    onClick={[Function]}
+  >
+    Title
+  </button>
+</div>
+`;

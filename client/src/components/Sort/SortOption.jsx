@@ -2,7 +2,7 @@ import '../../static/inline.css';
 import '../../static/sort-button.css';
 
 import React from 'react';
-import sortType from './sortType'
+import SORT_TYPE from './sortType'
 
 class SortOption extends React.Component {
     get className() {
@@ -13,9 +13,8 @@ class SortOption extends React.Component {
 
     getSortOptionTitle() {
         switch (this.props.sortType) {
-            case sortType.rating: return "rating";
-            case sortType.releaseDate:
-            default: return "release date";
+            case SORT_TYPE.rating: return "rating";
+            case SORT_TYPE.releaseDate: return "release date";
         }
     }
 

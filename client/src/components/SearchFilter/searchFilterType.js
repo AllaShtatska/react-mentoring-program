@@ -1,6 +1,8 @@
-const searchFilterType={
-    title: "title",
-    genre: "genre"
-};
+import keyMirror from 'keymirror';
 
-export default searchFilterType;
+const SEARCH_FILTER_TYPE = keyMirror({
+    title: null,
+    genre: null,
+  });
+
+export default SEARCH_FILTER_TYPE;

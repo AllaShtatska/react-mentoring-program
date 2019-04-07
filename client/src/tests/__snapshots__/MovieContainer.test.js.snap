@@ -1,0 +1,268 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div>
+    <div>
+      <div>
+        Find your movie
+      </div>
+      <div>
+        <input
+          onKeyDown={[Function]}
+          type="text"
+        />
+      </div>
+      <div>
+        <div
+          className="inline"
+        >
+          Search by
+          <div
+            className="inline"
+          >
+            <button
+              className="filter-button-selected"
+              onClick={[Function]}
+            >
+              Title
+            </button>
+          </div>
+          <div
+            className="inline"
+          >
+            <button
+              className="filter-button-deselected"
+              onClick={[Function]}
+            >
+              Genre
+            </button>
+          </div>
+        </div>
+        <button
+          id="search"
+          onClick={[Function]}
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div
+            className="inline"
+          >
+            7
+             movie(s) found
+          </div>
+          <div
+            className="inline margin-left"
+          >
+            Sort By
+            <div
+              className="inline"
+            >
+              <button
+                className="sort-button-selected"
+                onClick={[Function]}
+              >
+                release date
+              </button>
+            </div>
+            <div
+              className="inline"
+            >
+              <button
+                className="sort-button-deselected"
+                onClick={[Function]}
+              >
+                rating
+              </button>
+            </div>
+          </div>
+          <div>
+            <div
+              className="movie"
+              onClick={[Function]}
+            >
+              <div
+                className="image"
+              >
+                <img
+                  src="test-file-stub"
+                />
+              </div>
+              <div
+                className="inline"
+              >
+                Django unchained
+              </div>
+              <div
+                className="inline margin-left"
+              >
+                January 17, 2013
+              </div>
+              <div>
+                Drama
+              </div>
+            </div>
+            <div
+              className="movie"
+              onClick={[Function]}
+            >
+              <div
+                className="image"
+              >
+                <img
+                  src="test-file-stub"
+                />
+              </div>
+              <div
+                className="inline"
+              >
+                Kill Bill: Vol2
+              </div>
+              <div
+                className="inline margin-left"
+              >
+                April 16, 2004
+              </div>
+              <div>
+                Actions&Advanture
+              </div>
+            </div>
+            <div
+              className="movie"
+              onClick={[Function]}
+            >
+              <div
+                className="image"
+              >
+                <img
+                  src="test-file-stub"
+                />
+              </div>
+              <div
+                className="inline"
+              >
+                Kill Bill: Vol1
+              </div>
+              <div
+                className="inline margin-left"
+              >
+                October 10, 2003
+              </div>
+              <div>
+                Actions&Advanture
+              </div>
+            </div>
+            <div
+              className="movie"
+              onClick={[Function]}
+            >
+              <div
+                className="image"
+              >
+                <img
+                  src="test-file-stub"
+                />
+              </div>
+              <div
+                className="inline"
+              >
+                Jackie Brown
+              </div>
+              <div
+                className="inline margin-left"
+              >
+                December 25, 1997
+              </div>
+              <div>
+                Drama
+              </div>
+            </div>
+            <div
+              className="movie"
+              onClick={[Function]}
+            >
+              <div
+                className="image"
+              >
+                <img
+                  src="test-file-stub"
+                />
+              </div>
+              <div
+                className="inline"
+              >
+                Four rooms
+              </div>
+              <div
+                className="inline margin-left"
+              >
+                December 9, 1995
+              </div>
+              <div>
+                Comedy
+              </div>
+            </div>
+            <div
+              className="movie"
+              onClick={[Function]}
+            >
+              <div
+                className="image"
+              >
+                <img
+                  src="test-file-stub"
+                />
+              </div>
+              <div
+                className="inline"
+              >
+                Pulp fiction
+              </div>
+              <div
+                className="inline margin-left"
+              >
+                September 10, 1994
+              </div>
+              <div>
+                Oscar-winning movies
+              </div>
+            </div>
+            <div
+              className="movie"
+              onClick={[Function]}
+            >
+              <div
+                className="image"
+              >
+                <img
+                  src="test-file-stub"
+                />
+              </div>
+              <div
+                className="inline"
+              >
+                Reservoir dogs
+              </div>
+              <div
+                className="inline margin-left"
+              >
+                January 21, 1992
+              </div>
+              <div>
+                Independent movies
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,6 +1,8 @@
-const sortType={
-    releaseDate:"releaseDate",
-    rating:"rating"
-};
+import keyMirror from 'keymirror';
 
-export default sortType;
+const SORT_TYPE = keyMirror({
+  releaseDate: null,
+  rating: null,
+});
+
+export default SORT_TYPE;
