@@ -21,7 +21,7 @@ class SearchContainer extends React.Component{
                 </div>
                 <div>
                     <SearchFilterList filter={this.props.filter} onSwitchFilter={this.props.onSwitchFilter}/>
-                    <button onClick={()=>this.props.onSearch(this.input.value)}>Search</button>                    
+                    <button id="search" onClick={()=>this.props.onSearch(this.input.value)}>Search</button>                    
                 </div>
             </div>
         );

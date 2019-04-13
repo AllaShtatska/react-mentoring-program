@@ -2,29 +2,26 @@ import '../../static/inline.css';
 import '../../static/filter-button.css';
 
 import React from 'react';
-import searchFilterType from './searchFilterType'
+import SEARCH_FILTER_TYPE from './searchFilterType'
 
 class SearchFilter extends React.Component {
-    isFilterSelected() {
-        return this.props.currentFilter === this.props.filter;
-    }
-
-    getClassName() {
-        return this.isFilterSelected() ? 'filter-button-selected' : 'filter-button-deselected';
+    get className() {
+        const isFilterSelected = this.props.currentFilter === this.props.filter;
+        
+        return isFilterSelected ? 'filter-button-selected' : 'filter-button-deselected';
     }
 
     getFilterTitle() {
         switch (this.props.filter) {
-            case searchFilterType.genre: return "Genre";
-            case searchFilterType.title:
-            default: return "Title";
+            case SEARCH_FILTER_TYPE.genre: return "Genre";
+            case SEARCH_FILTER_TYPE.title:return "Title";
         }
     }
 
     render() {
         return (
             <div className="inline">
-                <button className={this.getClassName()} onClick={() => this.props.onSwitchFilter(this.props.filter)}>{this.getFilterTitle()}</button>
+                <button className={this.className} onClick={() => this.props.onSwitchFilter(this.props.filter)}>{this.getFilterTitle()}</button>
             </div>
         );
     }

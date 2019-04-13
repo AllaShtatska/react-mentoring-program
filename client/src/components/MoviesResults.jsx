@@ -9,7 +9,7 @@ class MoviesResults extends React.Component {
         return (
             <div>
                 <div>
-                    {(this.props.list.length === 0) ? <EmptyMovieResult /> : <div><MoviesSummary count={this.props.list.length}/><SortOptionsList sortType={this.props.sortType} onSwitchSortType={this.props.onSwitchSortType}/><MoviesList list={this.props.list} onSelectMovie={this.props.onSelectMovie}/></div>}
+                    {(this.props.list.length === 0) ? <EmptyMovieResult /> : <div><MoviesSummary count={this.props.list.length}/><SortOptionsList currentSortType={this.props.sortType} onSwitchSortType={this.props.onSwitchSortType}/><MoviesList list={this.props.list} onSelectMovie={this.props.onSelectMovie}/></div>}
                 </div>
             </div>
         );

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="movie"
+  onClick={[Function]}
+>
+  <div
+    className="image"
+  >
+    <img
+      src="../images/Kill_Bill_Volume_1.png"
+    />
+  </div>
+  <div
+    className="inline"
+  >
+    Kill Bill: Vol1
+  </div>
+  <div
+    className="inline margin-left"
+  >
+    October 10, 2003
+  </div>
+  <div>
+    Actions&Advanture
+  </div>
+</div>
+`;

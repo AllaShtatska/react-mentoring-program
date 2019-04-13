@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="inline"
+>
+  Search by
+  <div
+    className="inline"
+  >
+    <button
+      className="filter-button-selected"
+      onClick={[Function]}
+    >
+      Title
+    </button>
+  </div>
+  <div
+    className="inline"
+  >
+    <button
+      className="filter-button-deselected"
+      onClick={[Function]}
+    >
+      Genre
+    </button>
+  </div>
+</div>
+`;

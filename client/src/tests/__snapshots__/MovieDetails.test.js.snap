@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    className="inline"
+  >
+    <img
+      src="../images/Kill_Bill_Volume_1.png"
+    />
+  </div>
+  <div
+    className="inline"
+  >
+    <div
+      className="inline"
+    >
+      Kill Bill: Vol1
+    </div>
+    <div
+      className="inline margin-left"
+    >
+      10
+    </div>
+    <div>
+      Actions&Advanture
+    </div>
+    <div
+      className="inline"
+    >
+      October 10, 2003
+    </div>
+    <div
+      className="inline margin-left"
+    >
+      111
+       min
+    </div>
+    <div>
+      Kill Bill: Vol1 overview
+    </div>
+  </div>
+</div>
+`;

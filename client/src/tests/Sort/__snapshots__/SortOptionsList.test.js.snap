@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="inline margin-left"
+>
+  Sort By
+  <div
+    className="inline"
+  >
+    <button
+      className="sort-button-deselected"
+      onClick={[Function]}
+    >
+      release date
+    </button>
+  </div>
+  <div
+    className="inline"
+  >
+    <button
+      className="sort-button-selected"
+      onClick={[Function]}
+    >
+      rating
+    </button>
+  </div>
+</div>
+`;

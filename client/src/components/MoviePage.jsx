@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieDetails from './MovieDetails/MovieDetails'
+import MovieDetails from './MovieDetails'
 import MoviesList from './MoviesList';
 
 class MoviePage extends React.Component {
