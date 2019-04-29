@@ -11,7 +11,7 @@ class MovieDetails extends React.Component {
                 <div className="inline">
                     <div className="inline">{this.props.selectedMovie.title}</div>
                     <div className="inline margin-left">{this.props.selectedMovie.vote_average}</div>
-                    <div>{this.props.selectedMovie.genre}</div>
+                    <div>{this.props.selectedMovie.genres}</div>
                     <div className="inline">{this.props.selectedMovie.release_date}</div>
                     <div className="inline margin-left">{this.props.selectedMovie.runtime} min</div>
                     <div>{this.props.selectedMovie.overview}</div>

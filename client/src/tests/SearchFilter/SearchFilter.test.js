@@ -17,6 +17,5 @@ it ('should trigger switch filter on click', ()=>{
 
     component.find('button').simulate('click');
 
-    expect(switchFilter).toHaveBeenCalled();
     expect(switchFilter).toBeCalledWith(SEARCH_FILTER_TYPE.genre);
 });

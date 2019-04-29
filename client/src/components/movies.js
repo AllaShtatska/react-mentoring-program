@@ -11,7 +11,7 @@ var movies = {
         {
             id:"1",
             title:"Kill Bill: Vol1",
-            genre:["Actions&Advanture"],
+            genres:["Actions&Advanture"],
             release_date:"October 10, 2003",
             vote_average: 10,
             poster_path:Kill_Bill_Volume_1,
@@ -21,7 +21,7 @@ var movies = {
         {
             id:"2",
             title:"Kill Bill: Vol2",
-            genre:["Actions&Advanture"],
+            genres:["Actions&Advanture"],
             release_date: "April 16, 2004",
             vote_average: 8,
             poster_path:Kill_Bill_Volume_2,
@@ -31,7 +31,7 @@ var movies = {
         {
             id:"3",
             title:"Pulp fiction",
-            genre:["Oscar-winning movies"],
+            genres:["Oscar-winning movies"],
             release_date: "September 10, 1994",
             vote_average: 7,
             poster_path:Pulp_Fiction,
@@ -41,7 +41,7 @@ var movies = {
         {
             id:"4",
             title:"Jackie Brown",
-            genre:["Drama"],
+            genres:["Drama"],
             release_date: "December 25, 1997",
             vote_average: 9,
             poster_path:Jackie_Brown,
@@ -51,7 +51,7 @@ var movies = {
         {
             id:"5",
             title:"Reservoir dogs",
-            genre:["Independent movies"],
+            genres:["Independent movies"],
             release_date: "January 21, 1992",
             vote_average: 3,
             poster_path:Reservoir_Dogs,
@@ -61,7 +61,7 @@ var movies = {
         {
             id:"6",
             title:"Four rooms",
-            genre:["Comedy"],
+            genres:["Comedy"],
             release_date: "December 9, 1995",
             vote_average: 5,
             poster_path:Four_Rooms,
@@ -71,7 +71,7 @@ var movies = {
         {
             id:"7",
             title:"Django unchained",
-            genre:["Drama"],
+            genres:["Drama"],
             release_date: "January 17, 2013",
             vote_average: 6,
             poster_path:Django_Unchained,
