@@ -2,8 +2,12 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import {errorHappened} from '../actions/errorHappened';
+import {moviesFetchRequested} from '../actions/moviesFetchRequested';
 import MoviesPageContainer from './MoviesPageContainer';
 import MoviePageContainer from './MoviePageContainer';
+
+import SEARCH_FILTER_TYPE from '../components/SearchFilter/searchFilterType';
+import SORT_TYPE from '../components/Sort/sortType';
 
 
 const mapStateToProps = (state) => ({
@@ -17,12 +21,15 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     errorHappened: ()=>{
         dispatch(errorHappened());
+    },
+    initialMoviesFetch: ()=>{
+        dispatch(moviesFetchRequested(SEARCH_FILTER_TYPE.title, "", SORT_TYPE.releaseDate))
     }
 });
 
 class App extends React.Component{
-    constructor (props){
-        super(props);        
+    componentDidMount(){
+        this.props.initialMoviesFetch();
     }
 
     componentDidCatch(error, info){
