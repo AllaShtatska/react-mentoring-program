@@ -6,7 +6,7 @@ import Movie from '../components/Movie';
 const movie = {
     id: "1",
     title: "Kill Bill: Vol1",
-    genre: ["Actions&Advanture"],
+    genres: ["Actions&Advanture"],
     release_date: "October 10, 2003",
     vote_average: 10,
     poster_path: '../images/Kill_Bill_Volume_1.png',

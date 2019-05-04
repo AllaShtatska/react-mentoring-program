@@ -10,7 +10,7 @@ const Movie=({movie, onSelectMovie}) => (
     <div className='image'><img src={movie.poster_path}/></div>
     <div className="inline">{movie.title}</div>
     <div className="inline margin-left">{movie.release_date}</div>
-    <div>{movie.genre}</div>
+    <div>{movie.genres}</div>
     </div>
 );
 
