@@ -1,7 +1,7 @@
 import SEARCH_FILTER_TYPE from '../components/SearchFilter/searchFilterType';
 import SORT_TYPE from '../components/Sort/sortType';
 
-import {MOVIES_FETCH_SUCCEEDED, SWITCH_SORT_TYPE, SWITCH_FILTER, SEARCH, ERROR_HAPPENED} from '../actions/actionTypes';
+import {MOVIES_FETCH_SUCCEEDED, SWITCH_SORT_TYPE, SWITCH_FILTER, SEARCH, ERROR_HAPPENED, CLEAN_MOVIES} from '../actions/actionTypes';
 
 const initialState = {
     list: [],
@@ -37,6 +37,12 @@ const movies = (state = initialState, action) => {
             return {
                 ...state,
                 hasError: true
+            };
+        case CLEAN_MOVIES:
+            return{
+                ...state,
+                list:[],
+                hasError:false
             };
     }
     return state;

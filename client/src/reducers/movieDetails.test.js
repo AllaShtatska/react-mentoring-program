@@ -3,10 +3,15 @@ import movieDetails from './movieDetails'
 
 describe('movieDetails reducer', () => {
     it('should return the initial state', () => {
-        expect(movieDetails(undefined, {})).toEqual({
+        const expectedState = {
             selectedMovie: null,
-            moviesOfTheSameGenre: []
-        });
+            moviesOfTheSameGenre: [],
+            hasError:false
+        };
+
+        const movieDetailsState = movieDetails(undefined, {});
+
+        expect(movieDetailsState).toEqual(expectedState);
     });
 
     it('should set selected movie', () => {

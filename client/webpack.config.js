@@ -48,7 +48,14 @@ module.exports = function (env, options) {
         template: "./index.html"
       }),
       new ExtractTextPlugin("static/[name].css")
-    ]
+    ],
+
+    output: {
+      publicPath: '/'
+    },
+    devServer: {
+      historyApiFallback: true
+    }
   };
 
   return config;

@@ -7,6 +7,7 @@ import rootReducer from './reducers';
 
 import watchFetchMovies from './sagas/watchFetchMovies';
 import watchFetchMoviesOfTheSameGenre from "./sagas/watchFetchMoviesOfTheSameGenre";
+import watchFetchMovie from "./sagas/watchFetchMovie";
 
 const persistConfig = {
     key: 'root',
@@ -19,6 +20,7 @@ const sagaMiddleware = createSagaMiddleware();
 const configuredStore = createStore(persistedReducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(watchFetchMovies);
 sagaMiddleware.run(watchFetchMoviesOfTheSameGenre);
+sagaMiddleware.run(watchFetchMovie);
 
 export default () => {
     let store = configuredStore
