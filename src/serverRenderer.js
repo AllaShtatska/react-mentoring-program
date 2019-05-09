@@ -1,5 +1,9 @@
+import React from "react";
+import { renderToString } from "react-dom/server";
+import Root from "./Root";
+
 //middleware for express to render html
-function renderHTML() {
+function renderHTML(html) {
   return `
     <!doctype html>
     <html>
@@ -8,13 +12,17 @@ function renderHTML() {
             <title>React Server Side Rendering</title>
         </head>
         <body>
-            <div id="root"></div>
+            <div id="root">${html}</div>
             <script src="/js/main.js"></script>
         </body>
     </html>
     `;
 }
 
-module.exports = (req, res) => {
-  res.send(renderHTML());
-};
+export default function serverRenderer() {
+  return (req, res) => {
+    const htmlString = renderToString(<Root />);
+
+    res.send(renderHTML(htmlString));
+  };
+}

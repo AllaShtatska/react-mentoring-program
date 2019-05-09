@@ -1,10 +1,8 @@
-import React from 'react';
-import {render} from 'react-dom';
+import React from "react";
+import { hydrate } from "react-dom";
 
-import Root from './Root';
+import Root from "./Root";
 
-const root = (
-    <Root/>
-);
+const root = <Root />;
 
-render (root, document.getElementById('root'));
+hydrate(root, document.getElementById("root"));
