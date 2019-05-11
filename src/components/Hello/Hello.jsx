@@ -1,5 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
+import styles from "./Hello.css";
 
-const Hello = () => <div>Hello</div>;
+const Hello = ({ name }) => (
+  <div>
+    <b className={styles.name}>{name}</b>
+  </div>
+);
+
+Hello.propTypes = {
+  name: PropTypes.string.isRequired
+};
 
 export default Hello;

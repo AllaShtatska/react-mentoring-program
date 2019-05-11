@@ -12,5 +12,19 @@ module.exports = merge(common, {
   output: {
     filename: "js/serverRenderer.js",
     libraryTarget: "commonjs2"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        include: /src/,
+        loader: "css-loader",
+        options: {
+          exportOnlyLocals: true, //It doesn't embed CSS but only exports the identifier mappings
+          modules: true,
+          localIdentName: "[name]-[hash:5]"
+        }
+      }
+    ]
   }
 });
