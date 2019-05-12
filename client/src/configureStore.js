@@ -1,30 +1,21 @@
-import {createStore, applyMiddleware} from 'redux';
-import createSagaMiddleware from "redux-saga";
-import { persistStore, persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage' // defaults to localStorage for web and AsyncStorage for react-native
+import { createStore, applyMiddleware } from "redux";
+import createSagaMiddleware, { END } from "redux-saga";
 
-import rootReducer from './reducers';
-
-import watchFetchMovies from './sagas/watchFetchMovies';
-import watchFetchMoviesOfTheSameGenre from "./sagas/watchFetchMoviesOfTheSameGenre";
-import watchFetchMovie from "./sagas/watchFetchMovie";
-
-const persistConfig = {
-    key: 'root',
-    storage,
-  }
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+import rootReducer from "./reducers";
+import rootSaga from "./sagas";
 
 const sagaMiddleware = createSagaMiddleware();
 
-const configuredStore = createStore(persistedReducer, applyMiddleware(sagaMiddleware));
-sagaMiddleware.run(watchFetchMovies);
-sagaMiddleware.run(watchFetchMoviesOfTheSameGenre);
-sagaMiddleware.run(watchFetchMovie);
+export default initialState => {
+  const store = createStore(
+    rootReducer,
+    initialState,
+    applyMiddleware(sagaMiddleware)
+  );
 
-export default () => {
-    let store = configuredStore
-    let persistor = persistStore(store)
-    return { store, persistor }
-  }
-  
+  sagaMiddleware.run(rootSaga);
+  store.runSaga = () => sagaMiddleware.run(rootSaga);
+  store.close = () => store.dispatch(END);
+
+  return store;
+};

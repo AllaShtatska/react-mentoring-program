@@ -3,7 +3,7 @@ import { hydrate } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 
 import Root from "./Root";
-import configureStore from "./modules/configureStore";
+import configureStore from "./configureStore";
 
 const store = configureStore(window.PRELOADED_STATE);
 

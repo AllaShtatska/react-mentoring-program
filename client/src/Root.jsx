@@ -3,34 +3,23 @@ import "babel-polyfill";
 import React from "react";
 import PropTypes from "prop-types";
 import { hot } from "react-hot-loader";
-import { Route, Link, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 
-import Hello from "./components/Hello";
-import HomePage from "./pages/HomePage";
-import UsersPage from "./pages/UsersPage";
-import UserPage from "./pages/UserPage";
+import MoviesContainer from "./containers/MoviesContainer";
+import MovieContainer from "./containers/MovieContainer";
+
+import NotFound from "./components/NotFound";
 
 const Root = ({ Router, location, context, store }) => (
   <Provider store={store}>
     <Router location={location} context={context}>
-      <div>
-        <h1>Server Side Rendering</h1>
-        <Hello name="World" />
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/users">Users</Link>
-          </li>
-        </ul>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/users/:userId" component={UserPage} />
-          <Route path="/users" component={UsersPage} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/" component={MoviesContainer} />
+        <Route path="/search/:searchQuery" component={MoviesContainer} />
+        <Route path="/film/:id" component={MovieContainer} />
+        <Route path="*" component={NotFound} />
+      </Switch>
     </Router>
   </Provider>
 );

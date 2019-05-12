@@ -1,30 +1,40 @@
-import '../../static/inline.css';
-import '../../static/sort-button.css';
+import inlineStyles from "../../static/inline.css";
+import sortButtonStyles from "../../static/sort-button.css";
 
-import React from 'react';
-import SORT_TYPE from './sortType'
+import React from "react";
+import SORT_TYPE from "./sortType";
 
 class SortOption extends React.Component {
-    get className() {
-        const isSortOptionSelected = this.props.currentSortType === this.props.sortType;
-        
-        return isSortOptionSelected ? 'sort-button-selected' : 'sort-button-deselected';
-    }
+  get className() {
+    const isSortOptionSelected =
+      this.props.currentSortType === this.props.sortType;
 
-    getSortOptionTitle() {
-        switch (this.props.sortType) {
-            case SORT_TYPE.rating: return "rating";
-            case SORT_TYPE.releaseDate: return "release date";
-        }
-    }
+    return isSortOptionSelected
+      ? sortButtonStyles["sort-button-selected"]
+      : sortButtonStyles["sort-button-deselected"];
+  }
 
-    render() {
-        return (
-            <div className="inline">
-                <button className={this.className} onClick={() => this.props.onSwitchSortType(this.props.sortType)}>{this.getSortOptionTitle()}</button>
-            </div>
-        );
+  getSortOptionTitle() {
+    switch (this.props.sortType) {
+      case SORT_TYPE.rating:
+        return "rating";
+      case SORT_TYPE.releaseDate:
+        return "release date";
     }
+  }
+
+  render() {
+    return (
+      <div className={inlineStyles.inline}>
+        <button
+          className={this.className}
+          onClick={() => this.props.onSwitchSortType(this.props.sortType)}
+        >
+          {this.getSortOptionTitle()}
+        </button>
+      </div>
+    );
+  }
 }
 
 export default SortOption;

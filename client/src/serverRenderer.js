@@ -3,7 +3,7 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
 
 import Root from "./Root";
-import configureStore from "./modules/configureStore";
+import configureStore from "./configureStore";
 
 //middleware for express to render html
 function renderHTML(html, preloadedState) {
@@ -12,7 +12,7 @@ function renderHTML(html, preloadedState) {
     <html>
         <head>
             <meta charset=utf-8>
-            <title>React Server Side Rendering</title>
+            <title>Movies</title>
             ${
               process.env.NODE_ENV === "development"
                 ? ""
