@@ -1,7 +1,9 @@
-/.vs
+/dist
 
-node_modules
+/node_modules
 
-public
+/coverage
+
+/public
 
 package-lock.json
