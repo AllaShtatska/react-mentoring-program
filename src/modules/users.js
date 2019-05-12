@@ -1,3 +1,5 @@
+import { call, put, all, takeLatest } from "redux-saga/effects";
+
 //Actions
 const FETCH_USERS = "users/FETCH";
 const FETCH_USER_BY_ID = "users/FETCH_BY_ID";
@@ -5,11 +7,11 @@ const UPDATE = "users/UPDATE";
 const UPDATE_CURRENT_USER = "users/UPDATE_CURRENT_USER";
 
 //Action Creators
-export const fetchUsersAction = () => ({
+export const fetchUsers = () => ({
   type: FETCH_USERS
 });
 
-export const fetchUserByIdAction = userId => ({
+export const fetchUserById = userId => ({
   type: FETCH_USER_BY_ID,
   payload: userId
 });
@@ -25,24 +27,39 @@ export const updateCurrentUset = user => ({
 });
 
 //Async Actions
-export function fetchUsers() {
-  return dispatch => {
-    dispatch(fetchUsersAction());
+export function* fetchUsersAsync() {
+  const response = yield call(
+    fetch,
+    "http://jsonplaceholder.typicode.com/users"
+  );
+  const users = yield response.json();
 
-    fetch("http://jsonplaceholder.typicode.com/users")
-      .then(res => res.json())
-      .then(users => dispatch(updateUsers(users)));
-  };
+  yield put(updateUsers(users));
 }
 
-export function fetchUserById() {
-  return dispatch => {
-    dispatch(fetchUserByIdAction());
+export function* watchFetchUsers() {
+  yield takeLatest(FETCH_USERS, fetchUsersAsync);
+}
 
-    fetch(`http://jsonplaceholder.typicode.com/users/${userId}`)
-      .then(res => res.json())
-      .then(user => dispatch(updateCurrentUser(user)));
-  };
+export function* fetchUserByIdAsync(action) {
+  const response = yield call(
+    fetch,
+    `http://jsonplaceholder.typicode.com/users/${actiom.payload.userId}`
+  );
+
+  const user = yield response.json();
+
+  yield put(updateCurrentUser(user));
+}
+
+export function* watchFetchUserById() {
+  yield takeLatest(FETCH_USER_BY_ID, fetchUserByIdAsync);
+}
+
+//Users Saga
+export function* usersSaga() {
+  console.log("I am here");
+  yield all([watchFetchUsers(), watchFetchUserById()]);
 }
 
 //Intial state

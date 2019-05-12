@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import Hello from "../../components/Hello";
 import styles from "./UserPage.css";
+import Loader from "../../components/Loader";
 
 class UserPage extends PureComponent {
   static propTypes = {
@@ -16,12 +17,17 @@ class UserPage extends PureComponent {
     user: null
   };
 
+  componentWillMount() {
+    this.props.fetchUserById(this.props.userId);
+  }
+
   render() {
-    const { user } = this.props;
+    const { loding, user } = this.props;
     return (
       <div>
         <h2 className={styles.title}>User Page</h2>
         <Hello name="you are on User Page" />
+        <Loader loading={loading} />
         <pre>{JSON.stringify(user, null, 2)}</pre>
       </div>
     );

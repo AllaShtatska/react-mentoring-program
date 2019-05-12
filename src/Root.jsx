@@ -35,7 +35,7 @@ const Root = ({ Router, location, context, store }) => (
   </Provider>
 );
 
-Root.PropTypes = {
+Root.propTypes = {
   Router: PropTypes.func.isRequired,
   location: PropTypes.string,
   context: PropTypes.shape({ url: PropTypes.string }),

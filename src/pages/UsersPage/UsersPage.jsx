@@ -17,9 +17,14 @@ class UsersPage extends PureComponent {
     users: []
   };
 
-  componentDidMount() {
+  //asyn action will be called on a server side
+  componentWillMount() {
     this.props.fetchUsers();
   }
+
+  /*componentDidMount() {
+    this.props.fetchUsers();
+  }*/
 
   render() {
     const { loading, users } = this.props;
