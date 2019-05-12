@@ -58,7 +58,6 @@ export function* watchFetchUserById() {
 
 //Users Saga
 export function* usersSaga() {
-  console.log("I am here");
   yield all([watchFetchUsers(), watchFetchUserById()]);
 }
 
