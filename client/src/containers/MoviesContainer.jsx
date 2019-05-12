@@ -1,20 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import {errorHappened} from '../actions/errorHappened';
 import {moviesFetchRequested} from '../actions/moviesFetchRequested';
+import {cleanMovies} from '../actions/cleanMovies';
 import MoviesPageContainer from './MoviesPageContainer';
-import MoviePageContainer from './MoviePageContainer';
-
-import SEARCH_FILTER_TYPE from '../components/SearchFilter/searchFilterType';
-import SORT_TYPE from '../components/Sort/sortType';
 
 
 const mapStateToProps = (state) => ({
     filter:state.movies.filter,
     filterValue:state.movies.filterValue,
     sortType:state.movies.sortType,
-    selectedMovie:state.movieDetails.selectedMovie,
     hasError:state.movies.hasError
 });
 
@@ -22,14 +19,31 @@ const mapDispatchToProps = (dispatch) => ({
     errorHappened: ()=>{
         dispatch(errorHappened());
     },
-    initialMoviesFetch: ()=>{
-        dispatch(moviesFetchRequested(SEARCH_FILTER_TYPE.title, "", SORT_TYPE.releaseDate))
+    moviesFetch: (searchQuery)=>{
+        dispatch(moviesFetchRequested(searchQuery))
+    },
+    cleanMovies: ()=>{
+        dispatch(cleanMovies())
     }
 });
 
-class App extends React.Component{
+class MoviesContainer extends React.Component{
     componentDidMount(){
-        this.props.initialMoviesFetch();
+       this.loadMovies();
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.location.key !== this.props.location.key) {
+            this.loadMovies()
+        }
+    }
+
+    loadMovies(){
+        this.props.cleanMovies();
+        if (this.props.match.params.searchQuery !== undefined)
+        {
+            this.props.moviesFetch(this.props.match.params.searchQuery);
+        }
     }
 
     componentDidCatch(error, info){
@@ -44,13 +58,8 @@ class App extends React.Component{
             );
         }
 
-        if (this.props.selectedMovie == null)
-        {
-            return (<MoviesPageContainer filter={this.props.filter} sortType={this.props.sortType} filterValue={this.props.filterValue} />);
-        }
-
-        return (<MoviePageContainer/>);
+        return (<MoviesPageContainer filter={this.props.filter} sortType={this.props.sortType} filterValue={this.props.filterValue} />);
     }
 }
 
-export default connect (mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect (mapStateToProps, mapDispatchToProps)(MoviesContainer));
