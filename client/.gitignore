@@ -6,4 +6,6 @@
 
 /public
 
+/.next
+
 package-lock.json

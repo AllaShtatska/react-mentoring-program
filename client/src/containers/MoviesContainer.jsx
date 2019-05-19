@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "next/router";
 
 import { errorHappened } from "../actions/errorHappened";
 import { moviesFetchRequested } from "../actions/moviesFetchRequested";
@@ -27,23 +27,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class MoviesContainer extends React.Component {
-  componentWillMount() {
-    this.loadMovies();
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.location.key !== this.props.location.key) {
-      this.loadMovies();
-    }
-  }
-
-  loadMovies() {
-    this.props.cleanMovies();
-    if (this.props.match.params.searchQuery !== undefined) {
-      this.props.moviesFetch(this.props.match.params.searchQuery);
-    }
-  }
-
   componentDidCatch(error, info) {
     this.props.errorHappened();
     console.log("I crashed: " + error + " " + info);

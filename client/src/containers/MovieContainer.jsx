@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "next/router";
 
 import { errorHappened } from "../actions/errorHappened";
 import { movieFetchRequested } from "../actions/movieFetchRequested";
@@ -28,16 +28,10 @@ class MovieContainer extends React.Component {
     this.loadMovieDetails();
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.location.key !== this.props.location.key) {
-      this.loadMovieDetails();
-    }
-  }
-
   loadMovieDetails() {
     this.props.cleanMovieDetails();
-    if (this.props.match.params.id !== undefined) {
-      this.props.fetchMovie(this.props.match.params.id);
+    if (this.props.router.query.id !== undefined) {
+      this.props.fetchMovie(this.props.router.query.id);
     }
   }
 

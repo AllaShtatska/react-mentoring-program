@@ -1,11 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { moviesFetchRequested } from "../actions/moviesFetchRequested";
-import { cleanMovies } from "../actions/cleanMovies";
-import MoviesContainer from "../containers/MoviesContainer";
-
-import SEARCH_FILTER_TYPE from "../components/SearchFilter/searchFilterType";
+import { moviesFetchRequested } from "../src/actions/moviesFetchRequested";
+import { cleanMovies } from "../src/actions/cleanMovies";
+import MoviesContainer from "../src/containers/MoviesContainer";
 
 class Search extends React.Component {
   static getInitialProps(props) {
