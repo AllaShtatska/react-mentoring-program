@@ -1,17 +1,18 @@
 import React from "react";
-import Router from "next/router";
-import NavBar from "../components/navbar";
-import Seo from "../components/seo";
+import { connect } from "react-redux";
 
-function IndexPage() {
-  return (
-    <div>
-      <Seo title="Home page" description="This is my home page" />
-      <NavBar />
-      Hello Next.js
-      <button onClick={() => Router.push("/posts")}>Go to Posts</button>
-    </div>
-  );
+import MoviesContainer from "../containers/MoviesContainer";
+
+class Index extends React.Component {
+  /*static async getInitialProps(props) {
+    const { store, isServer } = props.ctx;
+
+    return { isServer };
+  }*/
+
+  render() {
+    return <MoviesContainer />;
+  }
 }
 
-export default IndexPage;
+export default connect()(Index);

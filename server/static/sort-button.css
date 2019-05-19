@@ -1,0 +1,9 @@
+.sort-button-selected, .sort-button-deselected{
+    background-color: transparent;
+}
+.sort-button-selected{
+    color: brown;
+}
+.sort-button-deselected{
+    color:black;
+}
