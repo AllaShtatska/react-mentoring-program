@@ -4,4 +4,8 @@
 
 /coverage
 
+/public
+
+/.next
+
 package-lock.json

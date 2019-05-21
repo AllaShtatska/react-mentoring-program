@@ -1,13 +1,15 @@
-import '../static/inline.css';
+import inlineStyles from "../static/inline.css";
 
-import React from 'react';
+import React from "react";
 
-class MoviesSummary extends React.Component{
-    render(){
-        return(
-            <div className="inline">{this.props.count} movie(s) found</div>
-        );
-    }
+class MoviesSummary extends React.Component {
+  render() {
+    return (
+      <div className={inlineStyles.inline}>
+        {this.props.count} movie(s) found
+      </div>
+    );
+  }
 }
 
 export default MoviesSummary;
