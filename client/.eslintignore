@@ -1,0 +1,17 @@
+.gitignore
+
+/dist
+
+/node_modules
+
+/coverage
+
+/public
+
+/.next
+
+package-lock.json
+
+/cypress
+
+package.json

@@ -1,5 +1,5 @@
-import {CLEAN_MOVIES} from "./actionTypes";
+import { CLEAN_MOVIES } from "./actionTypes";
 
-export const cleanMovies = ()=>({
-    type: CLEAN_MOVIES
+export const cleanMovies = () => ({
+  type: CLEAN_MOVIES,
 });

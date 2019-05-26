@@ -8,7 +8,7 @@ function* rootSaga() {
   yield all([
     watchFetchMovies(),
     watchFetchMoviesOfTheSameGenre(),
-    watchFetchMovie()
+    watchFetchMovie(),
   ]);
 }
 

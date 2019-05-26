@@ -1,6 +1,6 @@
-import {SWITCH_SORT_TYPE} from './actionTypes';
+import { SWITCH_SORT_TYPE } from "./actionTypes";
 
-export const switchSortType = (sortType)=>({
-    type: SWITCH_SORT_TYPE,
-    sortType
+export const switchSortType = sortType => ({
+  type: SWITCH_SORT_TYPE,
+  sortType,
 });

@@ -1,5 +1,5 @@
-import {ERROR_HAPPENED} from "./actionTypes";
+import { ERROR_HAPPENED } from "./actionTypes";
 
-export const errorHappened = ()=>({
-    type: ERROR_HAPPENED
+export const errorHappened = () => ({
+  type: ERROR_HAPPENED,
 });

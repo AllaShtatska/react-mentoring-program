@@ -1,26 +1,27 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import React from "react";
+import renderer from "react-test-renderer";
 
-import { PersistGate } from 'redux-persist/integration/react'
+import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import MoviesContainer from '../containers/MoviesContainer';
+import MoviesContainer from "../containers/MoviesContainer";
 
 import configureStore from "../configureStore";
 
 const store = configureStore();
 
-it('renders correctly', () => {
-    const component = renderer.create(
+it("renders correctly", () => {
+  const component = renderer.create(
         <Provider store={store.store}>
             <PersistGate loading={null} persistor={store.persistor}>
                 <Router>
                     <Route exact path="/" component={MoviesContainer} />
                 </Router>
             </PersistGate>
-        </Provider>);
+        </Provider>,
+  );
 
-    var jsonComponent = component.toJSON();
-    expect(jsonComponent).toMatchSnapshot();
+  const jsonComponent = component.toJSON();
+  expect(jsonComponent).toMatchSnapshot();
 });
