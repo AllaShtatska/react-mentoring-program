@@ -1,11 +1,17 @@
+import { List } from "immutable";
+
 import {
-  SET_SELECTED_MOVIE, MOVIES_OF_THE_SAME_GENRE_FETCH_SUCCEEDED, MOVIE_FETCH_SUCCEEDED, CLEAN_MOVIE_DETAILS, ERROR_HAPPENED,
+  SET_SELECTED_MOVIE,
+  MOVIES_OF_THE_SAME_GENRE_FETCH_SUCCEEDED,
+  MOVIE_FETCH_SUCCEEDED,
+  CLEAN_MOVIE_DETAILS,
+  ERROR_HAPPENED
 } from "../actions/actionTypes";
 
 const initialState = {
   selectedMovie: null,
-  moviesOfTheSameGenre: [],
-  hasError: false,
+  moviesOfTheSameGenre: List(),
+  hasError: false
 };
 
 const movieDetails = (state = initialState, action) => {
@@ -13,29 +19,29 @@ const movieDetails = (state = initialState, action) => {
     case SET_SELECTED_MOVIE:
       return {
         ...state,
-        selectedMovie: action.movie,
+        selectedMovie: action.movie
       };
     case MOVIES_OF_THE_SAME_GENRE_FETCH_SUCCEEDED:
       return {
         ...state,
-        moviesOfTheSameGenre: action.movies.data,
+        moviesOfTheSameGenre: List(action.movies.data)
       };
     case MOVIE_FETCH_SUCCEEDED:
       return {
         ...state,
-        selectedMovie: action.payload.movie,
+        selectedMovie: action.payload.movie
       };
     case CLEAN_MOVIE_DETAILS:
       return {
         ...state,
         selectedMovie: null,
-        moviesOfTheSameGenre: [],
-        hasError: false,
+        moviesOfTheSameGenre: List(),
+        hasError: false
       };
     case ERROR_HAPPENED:
       return {
         ...state,
-        hasError: true,
+        hasError: true
       };
   }
   return state;
