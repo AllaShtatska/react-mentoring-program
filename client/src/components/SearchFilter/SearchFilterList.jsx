@@ -1,12 +1,20 @@
+// @flow
+
 import React from "react";
-import PropTypes from "prop-types";
 
 import SEARCH_FILTER_TYPE from "./searchFilterType";
 import SearchFilter from "./SearchFilter";
 import inlineStyles from "../../static/inline.css";
 
-const SearchFilterList = ({ filter, onSwitchFilter }) => {
-  const searchFilters = Object.values(SEARCH_FILTER_TYPE).map(searchFilter => (
+type SearchFilterListProps = {
+  filter: string,
+  onSwitchFilter: function
+};
+
+const SearchFilterList = (searchFilterListProps:SearchFilterListProps) => {
+  const{ filter, onSwitchFilter } = searchFilterListProps;
+  const searchFilters = Object.values(SEARCH_FILTER_TYPE).map((searchFilter:mixed) => (
+    (typeof searchFilter === 'string') &&
     <SearchFilter
       key={searchFilter}
       currentFilter={filter}
@@ -21,11 +29,6 @@ const SearchFilterList = ({ filter, onSwitchFilter }) => {
       {searchFilters}
     </div>
   );
-};
-
-SearchFilterList.propTypes = {
-  filter: PropTypes.string.isRequired,
-  onSwitchFilter: PropTypes.func.isRequired
 };
 
 export default SearchFilterList;
