@@ -1,18 +1,11 @@
 import inlineStyles from "../../static/inline.css";
-import filterButtonStyles from "../../static/filter-button.css";
 
 import React from "react";
+
 import SEARCH_FILTER_TYPE from "./searchFilterType";
+import FilterButton from "./FilterButton";
 
 class SearchFilter extends React.Component {
-  get className() {
-    const isFilterSelected = this.props.currentFilter === this.props.filter;
-
-    return isFilterSelected
-      ? filterButtonStyles["filter-button-selected"]
-      : filterButtonStyles["filter-button-deselected"];
-  }
-
   getFilterTitle() {
     switch (this.props.filter) {
       case SEARCH_FILTER_TYPE.genre:
@@ -25,12 +18,12 @@ class SearchFilter extends React.Component {
   render() {
     return (
       <div className={inlineStyles.inline}>
-        <button
-          className={this.className}
+        <FilterButton
+          selected={this.props.currentFilter === this.props.filter}
           onClick={() => this.props.onSwitchFilter(this.props.filter)}
         >
           {this.getFilterTitle()}
-        </button>
+        </FilterButton>
       </div>
     );
   }
