@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "next/router";
+import { List } from "immutable";
 
 import { search } from "../actions/search";
 import { switchFilter } from "../actions/switchFilter";
@@ -11,7 +12,7 @@ import MoviesPage from "../components/MoviesPage";
 import { getFilterPart, getSortPart } from "../common/queryUtils";
 
 const mapStateToProps = state => ({
-  list: state.movies.list,
+  list: List(state.movies.list),
   filterType: state.movies.filter,
   sortType: state.movies.sortType,
   selectedMovie: state.movieDetails.selectedMovie

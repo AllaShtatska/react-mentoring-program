@@ -1,17 +1,25 @@
 import React from "react";
+import { createSelector } from "reselect";
 import EmptyMovieResult from "./EmptyMoviesResults";
 import MoviesList from "./MoviesList";
 import MoviesSummary from "./MoviesSummary";
 import SortOptionsList from "./Sort/SortOptionsList";
 
+const getMovies = movies => movies;
+
+const getMoviesSize = createSelector(
+  getMovies,
+  movies => movies.size
+);
+
 const MoviesResults = ({ list, sortType, switchSortType, selectMovie }) => (
   <div>
     <div>
-      {list.size === 0 ? (
+      {getMoviesSize(list) === 0 ? (
         <EmptyMovieResult />
       ) : (
         <div>
-          <MoviesSummary count={list.size} />
+          <MoviesSummary count={getMoviesSize(list)} />
           <SortOptionsList
             currentSortType={sortType}
             onSwitchSortType={switchSortType}
